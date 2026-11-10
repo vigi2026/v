@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PhonePe Clone (Demo)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>10:44</span><span class="sig">▂▄▆ 📶 🔋</span></div>
+
+  <header class="hdr">
+    <div class="me"><img class="pic" src="img/avatar.png" alt="Profile"></div>
+    <div class="addr"><b>Add Address ▾</b><small>Shivaji Nagar</small></div>
+    <button class="hi" data-ic="qr" aria-label="QR"></button>
+    <button class="hi bell" data-ic="bell" aria-label="Notifications"><em>5</em></button>
+    <button class="hi" data-ic="help" aria-label="Help"></button>
+  </header>
+
+  <!-- HOME -->
+  <main id="home" class="screen active">
+    <img class="adimg" src="img/banner.png" alt="Offer banner">
+
+    <section class="card">
+      <h4>Transfer Money</h4>
+      <div class="row4">
+        <button onclick="toast('To Mobile Number')"><span class="ci" data-ic="person"></span>To Mobile<br>Number<span class="dot"></span></button>
+        <button onclick="toast('To Bank / UPI ID')"><span class="ci" data-ic="bank"></span>To Bank/ UPI<br>ID</button>
+        <button onclick="toast('To Self Account')"><span class="ci" data-ic="clock"></span>To Self<br>Account</button>
+        <button onclick="toast('Balance: ₹24,850.50')"><span class="ci" data-ic="building"></span>Check Bank<br>Balance</button>
+      </div>
+      <button class="upi" onclick="toast('UPI ID copied')">UPI ID: 8080038461@ibl <b>›</b></button>
+    </section>
+
+    <div class="tiles">
+      <button onclick="toast('Wallet')"><span data-ic="wallet"></span>PhonePe Wallet</button>
+      <button onclick="toast('Rewards')"><span data-ic="gift"></span><u>2</u>Rewards</button>
+      <button onclick="toast('Refer & Get ₹100')"><span data-ic="mega"></span>Refer &amp; Get ₹100</button>
+    </div>
+
+    <section class="card lite">
+      <img class="upil" src="img/upilite.png" alt="UPI Lite">
+      <span>PIN-less Payments</span>
+      <button class="try" onclick="toast('UPI Lite activated')">TRY NOW</button>
+    </section>
+
+    <section class="card">
+      <div class="sec"><h4>Recharge &amp; Pay Bills</h4><button class="mybills">My Bills</button></div>
+      <div class="row4 bills">
+        <button><span class="bi" data-ic="phone"></span>Mobile<br>Recharge</button>
+        <button><img class="bi pop" src="img/metro.png" alt="">FASTag<br>Recharge<em>Popular</em></button>
+        <button><span class="bi" data-ic="dish"></span>DTH /<br>Cable TV</button>
+        <button><span class="bi" data-ic="bulb"></span>Electricity</button>
+        <button><span class="bi" data-ic="home"></span>Rent<br>Payment</button>
+        <button><span class="bi" data-ic="cyl"></span>Gas<br>Cylinder</button>
+        <button><span class="bi" data-ic="plug"></span>Loan<br>Repayment</button>
+        <button><span class="bi" data-ic="more"></span>See All</button>
+      </div>
+    </section>
+    <div style="height:90px"></div>
+  </main>
+
+  <!-- HISTORY -->
+  <main id="history" class="screen">
+    <div class="search"><span data-ic="search"></span>Search by name, number or UPI ID</div>
+    <section class="card hist">
+      <div class="month"><span>April 2024</span><span class="mr"><i data-ic="filter"></i><i data-ic="dl"></i><b>₹3,299.38</b></span></div>
+      <div class="tip" id="tip">This is real time updated total amount that you spend in April 2024<button onclick="this.parentNode.remove()" aria-label="Close">✕</button></div>
+      <ul id="txList"></ul>
+    </section>
+    <div style="height:90px"></div>
+  </main>
+
+  <button class="scanqr" id="scanqr" onclick="toast('Opening camera…')"><span data-ic="qr"></span>Scan QR</button>
+
+  <nav class="nav" id="nav">
+    <button data-s="home" class="on"><span data-ic="home2"></span>Home</button>
+    <button><span data-ic="rupee"></span>Credit</button>
+    <button><span data-ic="shield"></span>Insurance</button>
+    <button><span data-ic="compass"></span>Wealth</button>
+    <button data-s="history"><span data-ic="swap"></span>History</button>
+  </nav>
+  <div id="toast"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="app.js"></script>
+<script src="app2.js"></script>
+</body>
+</html>
